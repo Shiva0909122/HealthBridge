@@ -57,112 +57,110 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide speciality-card">
-                    <a href="consultation.html?speciality=generalphysician">
+                    <a href="#" onclick="redirectToLoginOrConsultation()">
                         <img src="../assets/general.webp" alt="GeneralPhysician">
                     </a>
                     <p>GeneralPhysician</p>
                     <p>₹499</p>
-                    <a href="consultation.html?speciality=GeneralPhysician">
+                    <a href="videobookingform.html?speciality=GeneralPhysician">
                         <button>Consult now</button>
                     </a>
                 </div>
-
+        
                 <div class="swiper-slide speciality-card">
-                    <a href="consultation.html?speciality=Dermatalogy">
-                        <img src="../assets/dermatology.webp" alt="Dermatalogy">
+                    <a href="#" onclick="redirectToLoginOrConsultation()">
+                        <img src="../assets/dermatology.webp" alt="Dermatology">
                     </a>
-                    <p>Dermatalogy</p>
+                    <p>Dermatology</p>
                     <p>₹499</p>
-                    <a href="consultation.html?speciality=Dermatalogy">
+                    <a href="videobookingform.html?speciality=Dermatology">
                         <button>Consult now</button>
                     </a>
                 </div>
-
+        
                 <div class="swiper-slide speciality-card">
-                    <a href="consultation.html?speciality=Orthopaedics">
+                    <a href="#" onclick="redirectToLoginOrConsultation()">
                         <img src="../assets/orthopaedics.webp" alt="Orthopaedics">
                     </a>
                     <p>Orthopaedics</p>
                     <p>₹399</p>
-                    <a href="consultation.html?speciality=Orthopaedics">
+                    <a href="videobookingform.html?speciality=Orthopaedics">
                         <button>Consult now</button>
                     </a>
                 </div>
-
+        
                 <div class="swiper-slide speciality-card">
-                    <a href="consultation.html?speciality=Dentist">
+                    <a href="#" onclick="redirectToLoginOrConsultation()">
                         <img src="../assets/dentist.webp" alt="Dentist">
                     </a>
                     <p>Dentist</p>
                     <p>₹449</p>
-                    <a href="consultation.html?speciality=Dermatology">
+                    <a href="videobookingform.html?speciality=Dentist">
                         <button>Consult now</button>
                     </a>
                 </div>
-
+        
                 <div class="swiper-slide speciality-card">
                     <a href="#">
                         <img src="../assets/neurology.webp" alt="Neurology">
                     </a>
                     <p>Neurology</p>
                     <p>₹449</p>
-                    <a href="#">
+                    <a href="videobookingform.html?speciality=Neurology">
                         <button>Consult now</button>
                     </a>
                 </div>
-
+        
                 <div class="swiper-slide speciality-card">
-                    <a href="#">
+                    <a href="#" onclick="redirectToLoginOrConsultation()">
                         <img src="../assets/gastroenterology.webp" alt="Gastroenterology">
                     </a>
                     <p>Gastroenterology</p>
                     <p>₹449</p>
-                    <a href="#">
+                    <a href="videobookingform.html?speciality=Gastroenterology">
                         <button>Consult now</button>
                     </a>
                 </div>
-
+        
                 <div class="swiper-slide speciality-card">
-                    <a href="#">
+                    <a href="#" onclick="redirectToLoginOrConsultation()">
                         <img src="../assets/cardiology.webp" alt="Cardiology">
                     </a>
                     <p>Cardiology</p>
                     <p>₹449</p>
-                    <a href="#">
+                    <a href="videobookingform.html?speciality=Cardiology">
                         <button>Consult now</button>
                     </a>
                 </div>
-
+        
                 <div class="swiper-slide speciality-card">
-                    <a href="#">
+                    <a href="#" onclick="redirectToLoginOrConsultation()">
                         <img src="../assets/psychology.webp" alt="Psychology">
                     </a>
                     <p>Psychology</p>
                     <p>₹449</p>
-                    <a href="#">
+                    <a href="videobookingform.html?speciality=Psychology">
                         <button>Consult now</button>
                     </a>
                 </div>
-
+        
                 <div class="swiper-slide speciality-card">
-                    <a href="#">
+                    <a href="#" onclick="redirectToLoginOrConsultation()">
                         <img src="../assets/endocrinology.webp" alt="Endocrinology">
                     </a>
                     <p>Endocrinology</p>
                     <p>₹449</p>
-                    <a href="#">
+                    <a href="videobookingform.html?speciality=Endocrinology">
                         <button>Consult now</button>
                     </a>
                 </div>
             </div>
-
+        
             <!-- Navigation Arrows -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
-
-            <!-- Pagination Dots -->
-            <!-- <div class="swiper-pagination"></div> -->
         </div>
+        
     </section>
 
     <section class="offers">
@@ -253,6 +251,18 @@
             &copy; 2025 Health Bridge. All Rights Reserved.
         </div>
     </footer>
+
+    <script>
+        function redirectToLoginOrConsultation() {
+            const isLoggedIn = false; // Change this based on actual login status
+            if (isLoggedIn) {
+                window.location.href = "consultation.html?speciality=generalphysician";
+            } else {
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
