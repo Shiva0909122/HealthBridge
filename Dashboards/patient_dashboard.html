@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Patient Dashboard</h2>
+    <p>Welcome, <span id="patient-name"></span></p>
+    <p>Your Appointments:</p>
+    <ul id="patient-appointments"></ul>
+    
+    <button onclick="bookAppointment()">Book Appointment</button>
+    <button onclick="logout()">Logout</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            if (!currentUser || currentUser.role !== "patient") {
+                alert("Unauthorized access! Redirecting to login...");
+                window.location.href = "../Pages/login.html";
+                return;
+            }
+            document.getElementById("patient-name").innerText = currentUser.username;
+            loadAppointments();
+        });
+
+        function loadAppointments() {
+            let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+            let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            let userAppointments = appointments.filter(appt => appt.patientId === currentUser.email);
+            
+            const appointmentList = document.getElementById("patient-appointments");
+            appointmentList.innerHTML = userAppointments.length > 0 ? userAppointments.map(appt => `
+                <li>
+                    <strong>Dr. ${appt.doctorName}</strong> - ${appt.symptom} at ${appt.timeSlot}
+                </li>
+            `).join("") : "No appointments booked.";
+        }
+
+        function bookAppointment() {
+            let patientName = prompt("Enter your name:");
+            let symptom = prompt("Enter your symptom:");
+            let timeSlot = prompt("Enter time slot:");
+            let doctorName = "Dr. Smith"; // Example doctor
+            let patientId = JSON.parse(localStorage.getItem("currentUser")).email;
+            
+            let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+            appointments.push({ patientName, symptom, timeSlot, doctorName, patientId });
+            localStorage.setItem("appointments", JSON.stringify(appointments));
+            alert("Appointment booked!");
+            loadAppointments();
+        }
+
+        function logout() {
+            alert("Logging out...");
+            window.location.href = "../Pages/login.html";
+        }
+    </script>
+</body>
+</html>
