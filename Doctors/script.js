@@ -8,7 +8,7 @@ const doctors = [
         location: "Nizamabad",
         fee: 900,
         availability: "Today",
-        image: "doctor1.jpg",
+        image: "../assets/doctor1.webp",
         link: "DrRahul.html"
     },
     {
@@ -19,7 +19,7 @@ const doctors = [
         location: "Nizamabad",
         fee: 1000,
         availability: "Next 7 days",
-        image: "doctor2.jpg",
+        image: "../assets/doctor2.png",
         link: "DrSuchitra.html"
     },
     {
@@ -30,7 +30,7 @@ const doctors = [
         location: "Nizamabad",
         fee: 600,
         availability: "Next 7 days",
-        image: "doctor3.jpg",
+        image: "../assets/doctor1.webp",
         link: "DrShivaCharan.html"
     },
     {
@@ -41,7 +41,7 @@ const doctors = [
         location: "Nizamabad",
         fee: 600,
         availability: "Next 7 days",
-        image: "doctor4.jpg",
+        image: "../assets/doctor1.webp",
         link: "DrShivarth.html"
     },
     {
@@ -52,7 +52,7 @@ const doctors = [
         location: "Nizamabad",
         fee: 600,
         availability: "Next 7 days",
-        image: "/assets/trust.svg",
+        image: "../assets/doctor1.webp",
         link: "DrVineeth.html"
     }
 ];
