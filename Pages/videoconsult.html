@@ -28,11 +28,44 @@
 
             </ul>
         </nav>
-        <a href="./signup.html">
-            <button class="login-btn" onclick="toggleLogin()">Login / Signup</button>
+        <a href="#" id="auth-link">
+            <button class="login-btn" id="auth-button">Login / Signup</button>
         </a>
+        
     </header>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    updateAuthButton();
+});
 
+function updateAuthButton() {
+    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    let authButton = document.getElementById("auth-button");
+    let authLink = document.getElementById("auth-link");
+
+    if (currentUser) {
+        // User is logged in, show logout button
+        authButton.innerText = "Logout";
+        authButton.onclick = logout;
+        authLink.href = "#"; // Prevent navigation
+    } else {
+        // User is not logged in, show login button
+        authButton.innerText = "Login / Signup";
+        authButton.onclick = null;
+        authLink.href = "../Pages/signup.html";
+    }
+}
+
+function logout() {
+    if (confirm("Are you sure you want to log out?")) {
+        localStorage.removeItem("currentUser"); // Remove user session
+        alert("Logged out successfully!");
+        updateAuthButton(); // Update UI
+        window.location.href = "../Pages/login.html"; // Redirect to login page
+    }
+}
+
+</script>
     <section class="hero">
         <img src="../assets/smiling-woman-holding-mobile-phone-text-messaging.png">
 

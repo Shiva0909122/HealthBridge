@@ -48,8 +48,11 @@ function login() {
             window.location.href = "../Dashboards/doctor_dashboard.html"; // Adjusted path
         } else if (user.role === "admin") {
             window.location.href = "../Dashboards/admin_dashboard.html"; // Adjusted path
-        } else {
-            window.location.href = "../index.html"; // Adjusted path
+        }else if (user.role === "patient") {
+            window.location.href = "../Dashboards/patient_dashboard.html"; // Adjusted path
+        } 
+        else {
+            window.location.href = "../Pages/index1.html"; // Adjusted path
         }
     } else {
         alert("Invalid credentials!");
