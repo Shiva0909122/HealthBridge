@@ -48,7 +48,7 @@ function updateAuthButton() {
         // User is not logged in, show login button
         authButton.innerText = "Login / Signup";
         authButton.onclick = null;
-        authLink.href = "../Pages/signup.html";
+        authLink.href = "./Pages/signup.html";
     }
 }
 
@@ -57,7 +57,7 @@ function logout() {
         localStorage.removeItem("currentUser"); // Remove user session
         alert("Logged out successfully!");
         updateAuthButton(); // Update UI
-        window.location.href = "../Pages/login.html"; // Redirect to login page
+        window.location.href = "./Pages/login.html"; // Redirect to login page
     }
 }
 
