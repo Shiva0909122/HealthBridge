@@ -278,16 +278,26 @@ button:hover {
         align-items: center;
         text-align: center;
         padding: 10px;
-        overflow-y: auto; /* Allows scrolling inside the sidebar */
+        overflow-y: auto;
+        /* Allows scrolling inside the sidebar */
         max-height: 100vh;
+    }
+.logo a img{
+height: 75px;
+width: 150px;
+}
+    .hb {
+        display: none;
     }
 
     .menu {
-        flex-grow: 1; /* Allows the menu to take available space */
-        overflow-y: auto; /* Enables scrolling if content exceeds space */
+        flex-grow: 1;
+        /* Allows the menu to take available space */
+        overflow-y: auto;
+        /* Enables scrolling if content exceeds space */
         /* height: auto;? */
     }
-    
+
     #booking-form {
         position: fixed;
         top: 50%;
@@ -299,10 +309,12 @@ button:hover {
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         width: 90%;
         max-width: 400px;
-        display: block; /* Ensure it's visible */
-        z-index: 1000; /* Bring it to the front */
+        display: block;
+        /* Ensure it's visible */
+        z-index: 1000;
+        /* Bring it to the front */
     }
-    
+
     .menu a,
     .menu button {
         width: 100%;

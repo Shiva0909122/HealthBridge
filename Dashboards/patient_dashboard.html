@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Dashboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="dashboard">
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo">
-              <a href="../index.html" target="blank">  <img src="../assets/logo.png" alt="Logo"></a>
-                <span>HealthBridge</span>
+                <a href="../index.html" target="blank"> <img src="../assets/logo.png" alt="Logo"></a>
+                <span class="hb">HealthBridge</span>
             </div>
             <nav class="menu">
                 <a href="#" class="active">My Appointments</a>
@@ -115,7 +117,7 @@
             let userAppointments = appointments.filter(appt => appt.patientId === currentUser.email);
 
             const appointmentList = document.getElementById("patient-appointments");
-            appointmentList.innerHTML = userAppointments.length > 0 ? 
+            appointmentList.innerHTML = userAppointments.length > 0 ?
                 userAppointments.map(appt => `
                     <li>
                         <strong>Dr. ${appt.doctorName}</strong> - ${appt.symptom} at ${appt.timeSlot}
@@ -132,7 +134,7 @@
             let userRecords = medicalRecords.filter(record => record.patientId === currentUser.email);
 
             const recordsList = document.getElementById("medical-records");
-            recordsList.innerHTML = userRecords.length > 0 ? 
+            recordsList.innerHTML = userRecords.length > 0 ?
                 userRecords.map(record => `
                     <li>
                         <strong>Doctor:</strong> ${record.doctorName} <br>
@@ -160,7 +162,7 @@
 
         document.getElementById("appointment-form").addEventListener("submit", function (e) {
             e.preventDefault();
-            
+
             let patientName = document.getElementById("patient-name").innerText;
             let symptom = document.getElementById("symptom").value;
             let timeSlot = document.getElementById("time-slot").value;
@@ -194,4 +196,5 @@
         }
     </script>
 </body>
+
 </html>
