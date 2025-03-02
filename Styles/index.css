@@ -327,7 +327,7 @@ h2 {
     }
 
     .search-container {
-        margin-left: 0;
+        margin-left: 22px;
         width: 80%;
     }
 
@@ -341,8 +341,13 @@ h2 {
 
     .hospitals {
         text-align: center;
+        margin-left: -28px;
+        
     }
-
+.browser{
+    margin-left: -205px;
+    /* text-align: center; */
+}
     .browser h2 {
         text-align: center;
     }
